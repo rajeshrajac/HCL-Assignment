@@ -1,0 +1,11 @@
+<div class="container" id="bodyContainer">
+  <br><br>
+  <app-giphy-search (giphyDataEvent)="receivedGiphyData($event)"></app-giphy-search>
+  <div class="row giphy-row" *ngFor="let giphyRow of giphyData;">
+    <div class="card" *ngFor="let giphyItem of giphyRow;" class="col">
+      <img [src]="giphyItem.images.fixed_height_still.url" (click)="emitEventToModel(giphyItem.images.original.url)"
+        class="card-img-top">
+    </div>
+  </div>
+</div>
+<app-giphy-preview [popupEvent]="popupEventSubject.asObservable()"></app-giphy-preview>

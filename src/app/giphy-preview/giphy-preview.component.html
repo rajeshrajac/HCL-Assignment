@@ -1,0 +1,9 @@
+<ng-template #popupTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Preview</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"> <span aria-hidden="true">&times;</span> </button>
+    </div>
+    <div class="modal-body">
+        <div class="card"> <img class="card-img-top" [src]="previewURL"> </div>
+    </div>
+</ng-template>
